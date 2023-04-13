@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ango Crystal</title>
+
+    {{-- bootstrap & css --}}
+    <link rel="stylesheet" href="{{ '/CSS/bootstrap.min.css' }}">
+    <link rel="stylesheet" href="{{ '/CSS/style.css' }}">
+
+    {{-- google font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    {{-- font awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    {{-- favicon --}}
+    <link rel="shortcut icon" href="{{ asset('image/logo.png')}}" type="image/x-icon">
+</head>
+
+<body>
+      <header id="header">
+        <nav class="navbar navbar-expand-sm bg-body-white fixed-top">
+            <div class="container-fluid">
+                {{-- logo --}}
+                <a class="navbar-brand ms-4 d-flex align-items-center" href="{{ route('home')}}">
+                  <img src="{{ asset('image/logo.png')}}" alt="" class="img-fluid" height="" width="">
+                </a>
+
+                {{-- hamburger button --}}
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ango Crystal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 navbar-list">
+                            <li class="nav-item">
+                              <a class="{{Request::routeIs('home') ? 'active' : ''}} nav-link" href="{{ route('home')}}">Home</a>
+                          </li>
+                            <li class="nav-item">
+                                <a class="{{Request::routeIs('about') ? 'active' : ''}} nav-link" href="{{ route('about')}}">About us</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="{{Request::routeIs('management') ? 'active' : ''}} nav-link" href="{{ route('management')}}">Management</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="{{Request::routeIs('news-blog') ? 'active' : ''}} nav-link" href="{{ route('news-blog')}}">News & Events</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="{{Request::routeIs('gallery') ? 'active' : ''}} nav-link" href="{{ route('gallery')}}">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="{{Request::routeIs('contact') ? 'active' : ''}} nav-link" href="{{ route('contact')}}">Contact us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+      </header>
+
+      {{-- back to top --}}
+      <button
+        type="button"
+        class="btn btn-danger btn-floating btn-lg"
+        id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+
+    {{-- second nav --}}
+    {{-- <nav>
+      <div class="container">
+        <h1 class="logo">My Website</h1>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="toggle"></div>
+      </div>
+    </nav> --}}
+
+    @yield('content')
+
+    {{-- newsletter --}}
+      <div id="newsletter" class="d-flex align-items-center mb-1" style="background-image: url('{{ asset('image/newsletter-bg.png')}}');">
+
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10 col-xxs-10 mx-auto">
+          <p class="text-center newsletter-text">
+          Better <span class="newsletter-orange-text">education</span> for a better world.<br> <span class="newsletter-orange-text">Investment</span> in <span class="newsletter-orange-text">knowledge</span> pays the best <span class="newsletter-orange-text">interest.</span>
+          </p>
+
+          <form action="">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Enter e-mail to receive news letter" aria-label="Recipient's username" aria-describedby="button-addon2" style="height: 50px">
+              <button class="btn message-button" type="button" id="button-addon2"><i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i></button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- footer -->
+      <footer class="custom-footer-styling">
+            <div class="container-fluid row">
+
+                <div class="col-lg-4 col-md-8 my-3 custom-footer-item0">
+                  <a href="{{ route('home')}}" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                    <img src="{{asset('image/footer_logo.png')}}" height="50px" alt="">
+                  </a>
+                  <p class="text-light">
+                      Ango Crystal Academy is an outstanding school targeting educational system, helping kids to read and write and guide on hands on to establish a strong identity.
+                  </p>
+                </div>
+
+                <div class="col-lg-2 col-md-4 my-5 custom-footer-item1">
+                  <h5>Link</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="{{ route('home')}}" class="nav-link p-0 text-light">Home</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('about')}}" class="nav-link p-0 text-light">About Us</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('management')}}" class="nav-link p-0 text-light">Management</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('news-blog')}}" class="nav-link p-0 text-light">News and event</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('gallery')}}" class="nav-link p-0 text-light">Gallery</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('contact')}}" class="nav-link p-0 text-light">Contact Us</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-8 my-5 custom-footer-item2">
+                  <h5>Find Us</h5>
+                  <p><i class="fa-solid fa-location-dot"></i> 23 Victor Anene Bossua Street, GRA, Asaba, Delta State.</p>
+                  <p><i class="fa-sharp fa-solid fa-envelope"></i> Angoacad@gmail.com</p>
+                  <p><i class="fa-solid fa-phone"></i> +2349021063261</p>
+                </div>
+
+                <div class="col-lg-2 col-md-4 my-5 custom-footer-item3">
+                  <h5>Social Contact</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+                  </ul>
+                </div>
+
+            </div>
+
+            <div class="container-fluid row py-4">
+                <div class="col d-flex justify-content-center custom-footer-item4">
+                    <p>Copyright © 2023. All Right Reserved.</p>
+                </div>
+            </div>
+
+      </footer>
+
+    <script src="{{ '/js/bootstrap.min.js' }}"></script>
+    <script src="{{ '/js/script.js' }}"></script>
+</body>
+
+</html>
