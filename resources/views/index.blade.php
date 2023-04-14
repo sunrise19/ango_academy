@@ -93,21 +93,23 @@
             @foreach ($blogs as $blog)
 
             <div class="col-lg-4 col-md-6">
-                <div class="card shadow-lg">
-                    <img src="{{ asset('image/blog_image1.png') }}" class="img-fluid" alt="">
+                <a href="{{ route('blog.show', $blog->id)}}" style="text-decoration: none">
+                   <div class="card shadow-lg">
+                        <img src="{{ asset('image/blog_image1.png') }}" class="img-fluid" alt="">
 
-                    <div class="card-body">
-                        <p class="card-text">
-                            {{$blog->details = Str::limit($blog->details, 100)}}
-                        </p>
-                        <h5>
-                            Headmaster <i class="fa-solid fa-comments mx-3"></i>10 <i class="fa-sharp fa-solid fa-eye mx-3"></i>29
-                        </h5>
-                        <p>
-                            {{ $blog->created_at->format('F j, Y, g:i a') }}
-                        </p>
-                    </div>
-                </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{$blog->details = Str::limit($blog->details, 100)}}
+                            </p>
+                            <h5>
+                                Headmaster <i class="fa-solid fa-comments mx-3"></i>10 <i class="fa-sharp fa-solid fa-eye mx-3"></i>29
+                            </h5>
+                            <p>{{ $blog->created_at->format('F j, Y, g:i a') }}</p>
+
+                        </div>
+                    </div> 
+                </a>
+                
             </div>
             @endforeach
 

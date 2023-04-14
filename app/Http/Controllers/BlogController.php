@@ -56,4 +56,11 @@ class BlogController extends Controller
 
         return redirect()->back()->with('message', 'Post Updated');
     }
+
+    public function destroy($id){
+        $blog = Blog::findOrFail($id);
+        $blog->delete();
+        //return redirect()->route('home')->with('message', 'Post Deleted');
+        return redirect()->back()->with('message', 'Post Deleted');
+    }
 }

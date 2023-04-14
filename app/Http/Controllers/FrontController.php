@@ -10,7 +10,9 @@ class FrontController extends Controller
 {
     //
     public function index(){
-        $blogs = Blog::take(3)->orderBy('created_at', 'desc')->get();
+        $blogs = Blog::all()->sortByDesc(function ($item) {
+            return $item->updated_at ?? $item->created_at;
+        })->take(3);
         // $blogs = Blog::all();
         // dd($blogs);
         return view('index')->with(['blogs' => $blogs]);
@@ -35,5 +37,10 @@ class FrontController extends Controller
 
     public function newsBlog(){
         return view('pages.newsblog');
+    }
+
+    public function show($id){
+        $blog = Blog::where('id', $id)->firstOrFail();
+        return view('posts.blog', ['blog' => $blog]);
     }
 }

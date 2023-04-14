@@ -27,9 +27,11 @@ Route::get('/contact-us', [FrontController::class, 'contact'])->name('contact');
 Route::get('/management', [FrontController::class, 'management'])->name('management');
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
 Route::get('/news-blog', [FrontController::class, 'newsBlog'])->name('news-blog');
+Route::get('/blog/{id}', [FrontController::class, 'show'])->name('blog.show');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/create-blog', [BlogController::class, 'create'])->name('blog.create');
 Route::post('/create-blog', [BlogController::class, 'store'])->name('blog.store');
 Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
 Route::post('/edit/{id}', [BlogController::class, 'update'])->name('blog.update');
+Route::get('/delete/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');

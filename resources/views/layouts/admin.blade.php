@@ -98,7 +98,7 @@
 
 
     <header class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0 shadow custom-navbar">
-        <a class="navbar-brand ms-4 d-flex align-items-center" href="{{ route('home') }}">
+        <a class="navbar-brand ms-4 d-flex align-items-center" href="{{ route('dashboard') }}">
             <img src="{{ asset('image/logo.png') }}" alt="" class="img-fluid" height="" width="">
         </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
@@ -127,15 +127,13 @@
                     <hr>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('dashboard')}}">
-                                <span data-feather="home" class="align-text-bottom"></span>
+                            <a class="{{ Request::routeIs('dashboard') ? 'active' : ''}} nav-link" href="{{ route('dashboard')}}">
                                 Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('blog.create') }}">
-                                <span data-feather="file" class="align-text-bottom"></span>
-                                Create Blog
+                            <a class="{{ Request::routeIs('blog.create') ? 'active' : ''}} nav-link" href="{{ route('blog.create') }}">
+                                Create News & Blog
                             </a>
                         </li>
                     </ul>
