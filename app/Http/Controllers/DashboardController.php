@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Pagination\Paginator;
 
 class DashboardController extends Controller
 {
@@ -16,9 +17,13 @@ class DashboardController extends Controller
         // $user = auth()->user();
         // $users = User::all();
         // $blogs = Blog::take(3)->orderBy('created_at', 'desc')->get();
-        $blogs = Blog::all()->sortByDesc(function ($item) {
-            return $item->updated_at ?? $item->created_at;
-        })->take(5);
+        Paginator::useBootstrap();
+        // $blogs = Blog::paginate(5);
+        $blogs = Blog::with('category')
+                        ->orderBy('created_at', 'desc')
+                        ->orderBy('updated_at', 'desc')
+                        ->take(5)
+                        ->get();
 
         return view('dashboard')->with (['blogs' => $blogs]);
 

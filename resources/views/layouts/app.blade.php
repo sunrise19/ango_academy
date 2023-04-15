@@ -19,6 +19,9 @@
     {{-- font awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    {{-- bootstrap icon cdn --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+
     {{-- favicon --}}
     <link rel="shortcut icon" href="{{ asset('image/logo.png')}}" type="image/x-icon">
 </head>
@@ -71,6 +74,14 @@
             </div>
         </nav>
       </header>
+      {{-- alert message --}}
+      @if (session()->has('message'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session()->get('message') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-bs-delay="5000"></button>
+            </div>
+        @endif
+
 
       {{-- back to top --}}
       <button
@@ -97,6 +108,8 @@
 
     @yield('content')
 
+
+
     {{-- newsletter --}}
       <div id="newsletter" class="d-flex align-items-center mb-1" style="background-image: url('{{ asset('image/newsletter-bg.png')}}');">
 
@@ -105,12 +118,18 @@
           Better <span class="newsletter-orange-text">education</span> for a better world.<br> <span class="newsletter-orange-text">Investment</span> in <span class="newsletter-orange-text">knowledge</span> pays the best <span class="newsletter-orange-text">interest.</span>
           </p>
 
-          <form action="">
+          <form action="{{ route('newsletter.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
+
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Enter e-mail to receive news letter" aria-label="Recipient's username" aria-describedby="button-addon2" style="height: 50px">
-              <button class="btn message-button" type="button" id="button-addon2"><i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i></button>
+              <input type="email" class="form-control" placeholder="Enter e-mail to receive news letter" style="height: 50px"  name="email" @error('email') is-invalid @enderror value="{{ old('email') }}">
+
+              <button class="btn message-button"><i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i></button>
             </div>
           </form>
+          @error('email')
+              <small class="text-warning">{{ $message }}</small>
+            @enderror
         </div>
 
       </div>
@@ -131,12 +150,12 @@
                 <div class="col-lg-2 col-md-4 my-5 custom-footer-item1">
                   <h5>Link</h5>
                   <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="{{ route('home')}}" class="nav-link p-0 text-light">Home</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('about')}}" class="nav-link p-0 text-light">About Us</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('management')}}" class="nav-link p-0 text-light">Management</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('news-blog')}}" class="nav-link p-0 text-light">News and event</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('gallery')}}" class="nav-link p-0 text-light">Gallery</a></li>
-                    <li class="nav-item mb-2"><a href="{{ route('contact')}}" class="nav-link p-0 text-light">Contact Us</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('home')}}" class="nav-link p-0 text-light hover-underline-animation">Home</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('about')}}" class="nav-link p-0 text-light hover-underline-animation">About Us</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('management')}}" class="nav-link p-0 text-light hover-underline-animation">Management</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('news-blog')}}" class="nav-link p-0 text-light hover-underline-animation">News and event</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('gallery')}}" class="nav-link p-0 text-light hover-underline-animation">Gallery</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('contact')}}" class="nav-link p-0 text-light hover-underline-animation">Contact Us</a></li>
                   </ul>
                 </div>
 
@@ -150,11 +169,11 @@
                 <div class="col-lg-2 col-md-4 my-5 custom-footer-item3">
                   <h5>Social Contact</h5>
                   <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
                   </ul>
                 </div>
 
@@ -170,6 +189,7 @@
 
     <script src="{{ '/js/bootstrap.min.js' }}"></script>
     <script src="{{ '/js/script.js' }}"></script>
+
 </body>
 
 </html>

@@ -2,31 +2,36 @@
 
 namespace App\Http\Controllers;
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
     //
     public function create(){
-              return view('posts.create');
+        $categories = Category::all();
+        return view('posts.create', ['categories'=>$categories]);
     }
 
     public function store(Request $request){
 
         $valid = $request->validate([
             'title' => 'required|unique:blogs|max:255|min:5',
+            'category_id' => 'required|exists:categories,id',
             'details' => 'required|min:10',
         ]);
 
         Blog::create($valid);
 
-        return redirect()->back()->with('message', 'Post Created');
+        session()->flash('message', 'Post Created Successfully!');
+        return redirect()->back();
     }
 
     public function edit($id){
         $blog = Blog::findOrFail($id);
+        $categories = Category::all();
         // dd($blog);
-        return view('posts.edit', ['blog'=>$blog]);
+        return view('posts.edit', ['blog'=>$blog, 'categories'=>$categories]);
     }
 
     public function update(Request $request, $id){
@@ -37,7 +42,7 @@ class BlogController extends Controller
         $valid = $request->validate([
             'title' => ['required', 'max:255', 'min:5'],
             // 'slug' => ['required', Rule::unique('blogs')->ignore($blog)],
-            // 'category_id' => 'required|exists:categories,id',
+            'category_id' => 'required|exists:categories,id',
             'details' => ['required', 'min:10'],
             // 'image' => ['nullable', 'mimes:jpg,png,jpeg']
         ]);
@@ -54,13 +59,15 @@ class BlogController extends Controller
 
         $blog->update(($valid));
 
-        return redirect()->back()->with('message', 'Post Updated');
+        session()->flash('message', 'Post Updated Successfully!');
+        return redirect()->back();
     }
 
     public function destroy($id){
         $blog = Blog::findOrFail($id);
         $blog->delete();
         //return redirect()->route('home')->with('message', 'Post Deleted');
-        return redirect()->back()->with('message', 'Post Deleted');
+        session()->flash('message', 'Post Deleted Successfully!');
+        return redirect()->back();
     }
 }

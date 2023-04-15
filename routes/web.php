@@ -4,6 +4,8 @@ use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NewsletterController;
+use App\Models\Newsletter;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -17,9 +19,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
 Route::get('/about-us', [FrontController::class, 'about'])->name('about');
@@ -35,3 +37,8 @@ Route::post('/create-blog', [BlogController::class, 'store'])->name('blog.store'
 Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
 Route::post('/edit/{id}', [BlogController::class, 'update'])->name('blog.update');
 Route::get('/delete/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+Route::resource('/categories', CategoryController::class);
+
+Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter');
+Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
+Route::get('/newsletter{id}', [NewsletterController::class, 'destroy'])->name('newsletter.destroy');

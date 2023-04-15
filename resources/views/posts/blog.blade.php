@@ -2,7 +2,7 @@
 
 @section('content')
     {{-- sub-header --}}
-    <div style="background-image: url('{{ asset('image/subheader.png') }}'); height: 182px;">
+    <div style="background-image: url('{{ asset('image/subheader.png') }}'); height: 150px;">
         <div class="sub-header-overlay d-flex align-items-center">
             <div class=" ms-4">
                 <p class="sub-header-heading">Blog</p>

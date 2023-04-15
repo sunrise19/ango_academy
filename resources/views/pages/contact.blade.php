@@ -2,12 +2,12 @@
 
 @section('content')
 {{-- sub-header --}}
-<div style="background-image: url('{{ asset('image/subheader.png')}}'); height: 182px;">
+<div style="background-image: url('{{ asset('image/subheader.png')}}'); height: 150px;">
     <div class="sub-header-overlay d-flex align-items-center">
         <div class=" ms-4">
-            <p class="sub-header-heading">Contact us</p> 
+            <p class="sub-header-heading">Contact us</p>
             <p  class="sub-header-text"><a href="{{ route('home')}}" class="sub-header-link">Home</a> &rarr; Contact us</p>
-        </div>    
+        </div>
     </div>
 </div>
 
@@ -15,12 +15,12 @@
     {{-- first column --}}
     <div class="row pt-3 mx-4 ms-5">
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            
+
             <p style="color: white; font-size: 30px;">&bull; CONTACT INFO &bull;</p>
 
             <div class="row">
                 <div class="col-11">
-                    
+
                             {{-- call --}}
                     {{-- <a href="" class="email-call-address btn w-100"><div class="row contact-divs mb-4 p-5">
                         <div class="col-3">
@@ -38,7 +38,7 @@
                                 <img src="{{ asset('image/call-icon.png')}}" alt="" class="img-fluid" width="100px">
                             </div>
                             <div class="col-7 d-flex align-items-center">
-                                
+
                                 <p class="text-start" style="font-size: 17px;"><b>Call us directly on</b><br>+234 9021063261</p>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                 <img src="{{ asset('image/mail-icon.png')}}" alt="" class="img-fluid" width="100px">
                             </div>
                             <div class="col-7 d-flex align-items-center">
-                                
+
                                 <p class="text-start"><b>Mail us directly on</b><br><span style="font-size: 13px;">Angoacad@gmail.com</span></p>
                             </div>
                         </div>
@@ -82,17 +82,17 @@
                                 <img src="{{ asset('image/location-icon.png')}}" alt="" class="img-fluid" width="100px">
                             </div>
                             <div class="col-7 d-flex align-items-center">
-                                
+
                                 <p class="text-start" style="font-size: 17px;"><b>Find us</b><br>23 Victor Anene Bossua Street, GRA, Asaba, Delta State.</p>
                             </div>
                         </div>
                     </a>
-                    
+
                 </div>
             </div>
-            
+
         </div>
-        
+
         {{-- second column --}}
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <p style="color: white; font-size: 30px;">&bull; GET IN TOUCH &bull;</p>
@@ -117,7 +117,7 @@
     </div>
 
     {{-- google map --}}
-   
+
 </div>
 <div class="row mt-5 mx-4">
     <div class="col-12">

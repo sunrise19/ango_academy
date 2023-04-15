@@ -3,11 +3,13 @@
 @section('posts')
     <div class="row mt-5 mb-5">
 
+        {{-- alert --}}
         @if (session()->has('message'))
-            <div class="alert alert-success">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session()->get('message') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-bs-delay="5000"></button>
             </div>
-        @endif
+         @endif
 
 
         {{-- error handling messages on top of the page --}}
@@ -41,7 +43,7 @@
 
                     </div>
 
-                    {{-- <div class="mb-3">
+                    <div class="mb-3">
                         <label for="category" class="form-label">Category</label>
                         <select name="category_id" id="category" class="form-select">
                             <option >Select Category</option>
@@ -52,7 +54,7 @@
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                         </select>
-                    </div> --}}
+                    </div>
 
                     {{-- <div class="mb-3">
                         <label for="slug" class="form-label">Slug</label>
@@ -85,8 +87,8 @@
 
                     </div>
 
-                    <div class=" mb-3 w-100">
-                        <button type="submit" class="btn btn-outline-primary w-100">Edit Post</button>
+                    <div class=" mb-3">
+                        <button type="submit" class="btn btn-outline-success w-100"><i class="bi bi-check-square-fill"></i> Edit</button>
                     </div>
                 </form>
             </div>

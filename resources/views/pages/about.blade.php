@@ -2,12 +2,12 @@
 
 @section('content')
 {{-- sub-header --}}
-<div style="background-image: url('{{ asset('image/subheader.png')}}'); height: 182px;">
+<div style="background-image: url('{{ asset('image/subheader.png')}}'); height: 150px;">
     <div class="sub-header-overlay d-flex align-items-center">
         <div class=" ms-4">
-            <p class="sub-header-heading">About us</p> 
+            <p class="sub-header-heading">About us</p>
             <p  class="sub-header-text"><a href="{{ route('home')}}" class="sub-header-link">Home</a> &rarr; About us</p>
-        </div>    
+        </div>
     </div>
 </div>
 
@@ -17,9 +17,9 @@
     {{-- view in large devices --}}
     <div class="row d-md-none d-sm-none d-none d-lg-flex d-xl-flex ms-2 me-2">
         <div class="col-xl-6 col-lg-6 mx-auto">
-          
+
             <img src="{{ asset('image/about-us.png')}}" alt="" class="mx-auto img-fluid about-image">
-            
+
         </div>
 
         <div class="col-xl-6 col-lg-6 text-background">
@@ -34,14 +34,14 @@
                 At sequi labore, ipsa mollitia quod eveniet nobis qui officia modi molestias provident ducimus, vero tenetur praesentium, asperiores quae voluptate voluptatum corporis ab ex illo sed. Inventore porro maxime recusandae?
                 Quas asperiores fugit fuga officia quae, sed delectus suscipit! Obcaecati quae tempore sint. Ipsa accusantium commodi, eos beatae dicta ipsum sapiente iusto excepturi. Deleniti distinctio ut placeat vero. Eius, nihil.
             </p>
-            
-            
+
+
         </div>
     </div>
 
     {{-- view in small devices --}}
     <div class="row d-xl-none d-lg-none d-md-block d-sm-block d-xs-block ms-2 me-2">
-        
+
         <div class="col-md-12 col-sm-12 col-xs-12 text-background">
             <div>
                 <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45x">
@@ -54,10 +54,10 @@
                 At sequi labore, ipsa mollitia quod eveniet nobis qui officia modi molestias provident ducimus, vero tenetur praesentium, asperiores quae voluptate voluptatum corporis ab ex illo sed. Inventore porro maxime recusandae?
                 Quas asperiores fugit fuga officia quae, sed delectus suscipit! Obcaecati quae tempore sint. Ipsa accusantium commodi, eos beatae dicta ipsum sapiente iusto excepturi. Deleniti distinctio ut placeat vero. Eius, nihil.
             </p>
-            
-            
+
+
         </div>
-        
+
         <div class="col-md-12 col-sm-12 col-xs-12 mx-auto">
             <img src="{{ asset('image/about-us.png')}}" alt="" class="mx-auto d-flex img-fluid about-image">
         </div>
@@ -76,12 +76,12 @@
             <p class="text">
                 We are determined to nurture leaders who are complete in spirit, mind and body through the application of accredited curriculum and assessment tools in a prepared environment, holistic in approach to unleash in the children their natural curiosity for self-discovery and development.
             </p>
-            
+
         </div>
-        
+
         <div class="col-xl-6 col-lg-6 text-background">
             <div>
-                <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45x">            
+                <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45x">
                 <p class="sub-heading">Our Vision</p>
             </div>
             <p class="text">
@@ -100,9 +100,9 @@
             <p class="text-small">
                 We are determined to nurture leaders who are complete in spirit, mind and body through the application of accredited curriculum and assessment tools in a prepared environment, holistic in approach to unleash in the children their natural curiosity for self-discovery and development.
             </p>
-            
+
         </div>
-        
+
         <div class="col-md-12 col-sm-12 col-xs-12 text-background">
             <div>
                 <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45x">

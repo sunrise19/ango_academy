@@ -24,6 +24,9 @@
     {{-- font awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    {{-- bootstrap icon cdn --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+
     <style>
         * {
             box-sizing: border-box;
@@ -134,6 +137,11 @@
                         <li class="nav-item">
                             <a class="{{ Request::routeIs('blog.create') ? 'active' : ''}} nav-link" href="{{ route('blog.create') }}">
                                 Create News & Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="{{ Request::routeIs('newsletter') ? 'active' : ''}} nav-link" href="{{ route('newsletter') }}">
+                                Newsletter
                             </a>
                         </li>
                     </ul>

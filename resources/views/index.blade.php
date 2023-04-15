@@ -63,8 +63,8 @@
 
 {{-- sports arranged in cards --}}
     <section class="container-fluid custom-bg-1">
-        <h2 class="my-5">SOME OF OUR <span style="color: #6665B5">ACTIVITIES</span></h2>
-        <div class="row">
+        <h2 class="mt-5 mb-4 ms-3" style="font-weight: 700; font-size: 30px; line-height: 45px;">SOME OF OUR <span style="color: #6665B5">ACTIVITIES</span></h2>
+        <div class="row ms-2 me-2">
             <div class="col-lg-4">
                 <img src="{{ asset('image/sport_icon.png') }}" height="50px" alt="">
                 <h2 class="fw-normal my-3">Sport</h2>
@@ -72,7 +72,7 @@
                     effort and skill.</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img src="{{ asset('image/music_icon.png') }}" height="50px" alt="">
+                <img src="{{ asset('image/music_icon.png') }}" height="50px" alt="" class="img-fluid">
                 <h2 class="fw-normal my-3">Music</h2>
                 <p class="fs-5 my-3">Music is expresses ideas and emotions in significant forms through the elements of
                     rhythm and melody.</p>
@@ -88,12 +88,18 @@
 
 {{-- latest blogs arranged in cards --}}
     <section class="container-fluid mt-5">
-        <h2 class="text-center mt-4 mb-5" style="color: #6665B5">Latest Blog</h2>
+        <div class="row">
+            <div class="mx-auto col-xl-6 col-lg-6 col-md-8 col-sm-12 col-xs-12 my-5 text-background">
+                <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45px" class="img-fluid blog-bg-pattern">
+                <h2 class="mt-4 mb-5 blog-sub-heading">Latest Blog</h2>
+            </div>
+        </div>
+
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mx-3">
             @foreach ($blogs as $blog)
 
             <div class="col-lg-4 col-md-6">
-                <a href="{{ route('blog.show', $blog->id)}}" style="text-decoration: none">
+                <a href="{{ route('blog.show', $blog->id)}}">
                    <div class="card shadow-lg">
                         <img src="{{ asset('image/blog_image1.png') }}" class="img-fluid" alt="">
 
@@ -107,9 +113,9 @@
                             <p>{{ $blog->created_at->format('F j, Y, g:i a') }}</p>
 
                         </div>
-                    </div> 
+                    </div>
                 </a>
-                
+
             </div>
             @endforeach
 
@@ -158,7 +164,13 @@
 
     {{-- teams --}}
     <section class="container-fluid custom-team-section">
-        <h2 id="team-head">Meet Our Team</h2>
+        <div class="row">
+            <div class="mx-auto col-xl-6 col-lg-6 col-md-8 col-sm-12 col-xs-12 mt-5 mb-5 text-background">
+                <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45px" class="img-fluid team-bg-pattern">
+                <h2 id="team-head" class="team-sub-heading">Meet Our Team</h2>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-lg-1 d-flex justify-content-center align-items-center">
                 <button class="team-slider">
@@ -229,17 +241,17 @@
     <section class="container-fluid custom-gallery-section">
         <h2 id="gallery-head">Our Gallery</h2>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-5">
                 <div class="card">
                     <img class="img-fluid" src="{{asset('image/gallery_image1.png')}}" alt="">
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-5">
                 <div class="card">
                     <img class="img-fluid" src="{{asset('image/gallery_image2.png')}}" alt="">
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-5">
                 <div class="card">
                     <img class="img-fluid" src="{{asset('image/gallery_image3.png')}}" alt="">
                 </div>
@@ -249,7 +261,7 @@
 
     {{-- button --}}
     <div class="container-fluid d-flex justify-content-end">
-        <button class="btn btn-lg my-5 text-light mx-4" style="background-color: #6665B5">
+        <button class="btn btn-lg mb-5 text-light mx-4" style="background-color: #6665B5">
             more articles <i class="fa-sharp fa-solid fa-arrow-right"></i>
         </button>
     </div>
