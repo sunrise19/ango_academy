@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 
@@ -40,7 +41,10 @@ class FrontController extends Controller
     }
 
     public function show($id){
-        $blog = Blog::where('id', $id)->firstOrFail();
-        return view('posts.blog', ['blog' => $blog]);
+        $blog = Blog::findOrFail($id);
+        $comments = Comment::all();
+        // $comment = Comment::where('post_id', $id)->get();
+        // return view('post', ['comments' => $comment]);
+        return view('posts.blog', compact('blog', 'comments'));
     }
 }

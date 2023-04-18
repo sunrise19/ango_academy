@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\DashboardController;
@@ -42,3 +43,6 @@ Route::resource('/categories', CategoryController::class);
 Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter');
 Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');
 Route::get('/newsletter{id}', [NewsletterController::class, 'destroy'])->name('newsletter.destroy');
+
+Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
+Route::delete('/comment/{id}', [CommentController::class, 'delete'])->name('comment.delete');
