@@ -639,3 +639,32 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+
+
+/* styling for newsblog */
+  #main-news-col{
+    position: relative;
+}
+
+#news1-desc{
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    background-color: rgb(0, 0, 20, 0.5);
+}
+
+#top-story-link{
+    text-decoration: none;
+    color: #FF0000;
+}
+
+ .title-div{
+    position: relative;
+ }
+
+ .title{
+    color: #6665B5;
+    position: absolute;
+    top: 14px;
+    left: 30px;
+ }
