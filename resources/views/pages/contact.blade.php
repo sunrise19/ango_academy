@@ -107,7 +107,7 @@
                     <input type="text" class="form-control" placeholder="Subject" name="subject" style="height: 70px;">
                 </div>
                 <div class="mb-3">
-                    <textarea class="form-control" rows="7" style="color: rgb(73, 73, 73)">Message here...</textarea>
+                    <textarea class="form-control" rows="7" style="color: rgb(73, 73, 73)" placeholder="Message here..."></textarea>
                 </div>
                 <div class="d-flex justify-content-end mb-5">
                     <a href="" class="btn form-btn">Send message</a>
