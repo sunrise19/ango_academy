@@ -72,15 +72,15 @@
 
                     </div>
 
-                    {{-- <div class="mb-3">
-                    <label for="image">Image</label>
-                    <input type="file" class="form-control" name="image" id="image" @error('image') is-invalid @enderror>
+                    <div class="mb-3">
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control" name="image" id="image" @error('image') is-invalid @enderror>
 
-                    @error('image')
-                    <small class="text-danger">{{ $message}}</small>
-                    @enderror
+                        @error('image')
+                        <small class="text-danger">{{ $message}}</small>
+                        @enderror
 
-                </div> --}}
+                    </div>
 
                     <div class=" mb-3">
                         <button class="btn btn-outline-primary w-100"><i class="bi bi-check-square-fill"></i> Create</button>

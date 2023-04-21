@@ -22,7 +22,7 @@ class DashboardController extends Controller
         $blogs = Blog::with('category')
                         ->orderBy('created_at', 'desc')
                         ->orderBy('updated_at', 'desc')
-                        ->take(5)
+                        ->take(15)
                         ->get();
 
         return view('dashboard')->with (['blogs' => $blogs]);

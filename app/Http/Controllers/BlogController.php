@@ -19,12 +19,15 @@ class BlogController extends Controller
             'title' => 'required|unique:blogs|max:255|min:5',
             'category_id' => 'required|exists:categories,id',
             'details' => 'required|min:10',
+            'image' => ['nullable', 'mimes:jpg,png,jpeg']
         ]);
 
-        Blog::create($valid);
+        $img_dir = $request->file('image')->store('blog_images', 'public');
+        // dd($img_dir);
+        Blog::create(array_merge($valid, ['image' =>$img_dir]));
 
         session()->flash('message', 'Post Created Successfully!');
-        return redirect()->back();
+        return redirect()->back()->withInput($request->input());//leaves the information on the field if an error is thrown
     }
 
     public function edit($id){
@@ -44,20 +47,20 @@ class BlogController extends Controller
             // 'slug' => ['required', Rule::unique('blogs')->ignore($blog)],
             'category_id' => 'required|exists:categories,id',
             'details' => ['required', 'min:10'],
-            // 'image' => ['nullable', 'mimes:jpg,png,jpeg']
+            'image' => ['nullable', 'mimes:jpg,png,jpeg']
         ]);
 
         // dd($valid['slug']);
         // $slug = Str::slug($valid['slug'], '-');
 
-        // if ($request->hasFile('image')){
-        //     $blog->update(array_merge($valid, ['image'=> $request->file('image')->store('blog_images', 'public')]));
-        // }
-        // else{
-        //     $blog->update(array_merge($valid, ['slug'=> $slug]));
-        // }
+        if ($request->hasFile('image')){
+            $blog->update(array_merge($valid, ['image'=> $request->file('image')->store('blog_images', 'public')]));
+        }
+        else{
+            $blog->update(($valid));
+        }
 
-        $blog->update(($valid));
+        // $blog->update(($valid));
 
         session()->flash('message', 'Post Updated Successfully!');
         return redirect()->back();

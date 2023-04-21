@@ -5,6 +5,7 @@ use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\NewsletterController;
 use App\Models\Newsletter;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -48,3 +49,6 @@ Route::get('/newsletter{id}', [NewsletterController::class, 'destroy'])->name('n
 
 Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
 Route::delete('/comment/{id}', [CommentController::class, 'delete'])->name('comment.delete');
+
+Route::get('/create-gallery', [GalleryController::class, 'create'])->name('gallery.create');
+Route::post('/create-gallery', [GalleryController::class, 'store'])->name('gallery.store');
