@@ -176,7 +176,7 @@
                                 Year-end sale
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </nav>
 
