@@ -178,6 +178,10 @@
                                 Year-end sale
                             </a>
                         </li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit">Logout</button>
+                        </form>
                     </ul>
                 </div>
             </nav>
