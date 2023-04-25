@@ -32,6 +32,7 @@ Route::get('/management', [FrontController::class, 'management'])->name('managem
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
 Route::get('/news-blog', [FrontController::class, 'newsBlog'])->name('news-blog');
 Route::get('/blog/{id}', [FrontController::class, 'show'])->name('blog.show');
+Route::get('/gallery/full-image', [FrontController::class, 'fullPage'])->name('gallery.full');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/create-blog', [BlogController::class, 'create'])->name('blog.create');

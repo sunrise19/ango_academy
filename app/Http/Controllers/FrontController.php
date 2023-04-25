@@ -73,4 +73,9 @@ class FrontController extends Controller
         // return view('post', ['comments' => $comment]);
         return view('posts.blog', compact('blog', 'comments'));
     }
+
+    public function fullPage(){
+        $galleries = Gallery::all();
+        return view('pages.full_image', ['galleries' => $galleries]);
+    }
 }

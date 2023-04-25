@@ -273,7 +273,7 @@
     color: #6665B5;
     position: absolute;
     top: 0px;
-    left: 202px;
+    left: 262px;
     z-index: 5;
 }
 
@@ -293,13 +293,13 @@
 .blog-bg-pattern{
     position: absolute;
     top: -10px;
-    left: 170px;
+    left: 230px;
     z-index: 4;
 }
 .small-bg-pattern{
     position: absolute;
     top: -38px;
-    left: 66px;
+    left: 69px;
     z-index: 4;
 }
 
@@ -312,15 +312,35 @@
     color: #6665B5;
     position: absolute;
     top: -32px;
-    left: 198px;
+    left: 238px;
     z-index: 5;
 }
+.small-team-heading{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+    color: #6665B5;
+    position: absolute;
+    top: -46px;
+    left: 70px;
+    z-index: 5;
+}
+
 .team-bg-pattern{
     position: absolute;
     top: -40px;
-    left: 170px;
+    left: 206px;
     z-index: 4;
 }
+.small-team-bg-pattern{
+    position: absolute;
+    top: -54px;
+    left: 39px;
+    z-index: 4;
+}
+
 
 .text{
   text-align: left;
@@ -549,3 +569,7 @@
     top: 14px;
     left: 30px;
  }
+
+
+ /* style for new carousel */
+ 

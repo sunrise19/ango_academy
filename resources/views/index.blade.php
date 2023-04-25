@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        
+
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -114,7 +114,7 @@
             </div>
         </div>
 
-        
+
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -203,10 +203,18 @@
 
     {{-- teams --}}
     <section class="container-fluid custom-team-section">
-        <div class="row">
+        <div class="row d-none d-sm-none d-md-flex d-lg-flex d-xl-flex">
             <div class="mx-auto col-xl-6 col-lg-6 col-md-8 col-sm-12 col-xs-12 mt-5 mb-5 text-background">
                 <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45px" class="img-fluid team-bg-pattern">
                 <h2 id="team-head" class="team-sub-heading">Meet Our Team</h2>
+            </div>
+        </div>
+
+        {{-- small devices subheading--}}
+        <div class="row d-block d-sm-block d-md-none d-lg-none d-xl-none">
+            <div class="mx-auto col-xl-6 col-lg-6 col-md-8 col-sm-12 col-xs-12 mt-5 mb-5 text-background" style="">
+                <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45px" class="img-fluid small-team-bg-pattern">
+                <h2 class="small-team-heading">Meet Our Team</h2>
             </div>
         </div>
 
@@ -218,7 +226,7 @@
             </div>
             <div class="col-lg-10">
                 <div class="row">
-                    <div class="col-lg-4 custum-col-4">
+                    <div class="col-lg-4 custum-col-4 mx-md-auto mx-sm-auto col-sm-8">
                         <div class="cards custom-cards shadow-lg">
                             <div class="d-flex justify-content-center">
                                 <div class="team-image-frame d-flex justify-content-center align-items-center">
@@ -276,17 +284,22 @@
         </div>
     </section>
 
+    {{-- copied card carousel --}}
+    
+        
+
 {{-- gallery --}}
     <section class="container-fluid custom-gallery-section">
         <h2 id="gallery-head">Our Gallery</h2>
         <div class="row">
             @foreach ($galleries as $gallery)
-       
-            <div class="col-lg-4 mb-3">
-                <div class="card">
+
+            <div class="col-lg-4 mb-3 col-md-6 mx-md-auto">
+                <div class="card shadow">
                     <img src="{{ asset('storage/'.$gallery->image )}}" alt="" height="300px">
                 </div>
             </div>
+
             {{-- <div class="col-lg-4 mb-3">
                 <div class="card">
                     <img class="img-fluid" src="{{asset('image/gallery_image2.png')}}" alt="">

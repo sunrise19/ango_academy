@@ -15,7 +15,7 @@
         <div class="shadow p-3">
 
 
-            <h1 class="text-center mb-3">UPLOAD A PICTURE</h1>
+            <h1 class="text-center mb-3">UPLOAD IMAGE</h1>
             <form action="{{ route('gallery.store') }}" class="form-control" method="post" enctype="multipart/form-data">
                 @csrf
 
