@@ -53,3 +53,4 @@ Route::delete('/comment/{id}', [CommentController::class, 'delete'])->name('comm
 
 Route::get('/create-gallery', [GalleryController::class, 'create'])->name('gallery.create');
 Route::post('/create-gallery', [GalleryController::class, 'store'])->name('gallery.store');
+
