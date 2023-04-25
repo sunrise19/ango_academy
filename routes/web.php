@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CommentController;
+use App\Models\Newsletter;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\NewsletterController;
-use App\Models\Newsletter;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
