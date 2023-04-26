@@ -76,11 +76,41 @@
       </header>
       {{-- alert message --}}
       @if (session()->has('message'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{ session()->get('message') }}
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit">Logout</button>
+                </form>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-bs-delay="5000"></button>
+            </div> --}}
+
+            <div class="container-fluid">
+                <div class="row alert alert-danger alert-dismissible fade show" role="alert">
+                    <div class="col-9">
+                        {{ session()->get('message') }}
+                    </div>
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-primary">Logout</button>
+                                </form>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-bs-delay="5000"></button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
+
+
         @endif
+
 
 
       {{-- back to top --}}

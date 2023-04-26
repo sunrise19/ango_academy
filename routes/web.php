@@ -34,14 +34,15 @@ Route::get('/news-blog', [FrontController::class, 'newsBlog'])->name('news-blog'
 Route::get('/blog/{id}', [FrontController::class, 'show'])->name('blog.show');
 Route::get('/gallery/full-image', [FrontController::class, 'fullPage'])->name('gallery.full');
 
-Route::middleware(['auth'])->group(function(){
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/create-blog', [BlogController::class, 'create'])->name('blog.create');
-Route::post('/create-blog', [BlogController::class, 'store'])->name('blog.store');
-Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
-Route::post('/edit/{id}', [BlogController::class, 'update'])->name('blog.update');
-Route::get('/delete/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
-Route::resource('/categories', CategoryController::class);
+// admin
+Route::prefix("admin")->middleware(['auth','isAdmin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/create-blog', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('/create-blog', [BlogController::class, 'store'])->name('blog.store');
+    Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::post('/edit/{id}', [BlogController::class, 'update'])->name('blog.update');
+    Route::get('/delete/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+    Route::resource('/categories', CategoryController::class);
 });
 
 Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter');
@@ -53,4 +54,3 @@ Route::delete('/comment/{id}', [CommentController::class, 'delete'])->name('comm
 
 Route::get('/create-gallery', [GalleryController::class, 'create'])->name('gallery.create');
 Route::post('/create-gallery', [GalleryController::class, 'store'])->name('gallery.store');
-

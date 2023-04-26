@@ -47,7 +47,7 @@
 
                     <p>or</p>
 
-                    <a href="{{ route('register')}}" class="bg-primary text-light">Sign up</a>
+                    <a href="{{ route('register')}}" class="btn btn-primary text-light">Sign up</a>
 
 
 
