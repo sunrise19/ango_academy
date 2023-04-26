@@ -16,11 +16,11 @@
         <div class="row mt-5 ms-2 me-2">
             @foreach ($galleries as $gallery)
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 d-none d-sm-none d-md-flex d-lg-flex d-xl-flex">
-                    <img src="{{ asset('storage/'.$gallery->image) }}" alt="" class="w-100 mb-3" height="200px">
+                    <a href="{{ asset('storage/'.$gallery->image) }}"><img src="{{ asset('storage/'.$gallery->image) }}" alt="" class="mb-3 w-100" height="250px" width="300px"></a>
                 </div>
                 {{-- small screen --}}
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 d-block d-sm-block d-md-none d-lg-none d-xl-none">
-                    <img src="{{ asset('storage/'.$gallery->image) }}" alt="" class="w-100 mb-3">
+                    <img src="{{ asset('storage/'.$gallery->image) }}" alt="" class="img-fluid w-100 mb-3">
                 </div>
             @endforeach
 

@@ -9,7 +9,8 @@ class GalleryController extends Controller
 {
     //
     public function create(){
-        return view('posts.upload_gallery');
+        $user = auth()->user();
+        return view('posts.upload_gallery', ['user' => $user]);
     }
 
     public function store(Request $request){

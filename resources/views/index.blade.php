@@ -15,7 +15,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('image/carousel1.png') }}" height="498px" width="100%" alt="">
+                <img src="{{ asset('image/carousel1.png') }}" height="600px" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
                         <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('image/carousel2.png') }}" height="498px" width="100%" alt="">
+                <img src="{{ asset('image/carousel2.png') }}" height="600px" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
                         <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('image/carousel3.png') }}" height="498px" width="100%" alt="">
+                <img src="{{ asset('image/carousel3.png') }}" height="600" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
                         <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('image/carousel4.png') }}" height="498px" width="100%" alt="">
+                <img src="{{ asset('image/carousel4.png') }}" height="600px" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
                         <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
@@ -285,8 +285,8 @@
     </section>
 
     {{-- copied card carousel --}}
-    
-        
+
+
 
 {{-- gallery --}}
     <section class="container-fluid custom-gallery-section">

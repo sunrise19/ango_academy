@@ -34,7 +34,7 @@
                             @foreach ($blogs as $blog)
                                 <tr>
                                     <td>{{ $blog->title }}</td>
-                                    <td>{{ $blog->details = Str::limit($blog->details, 10) }}</td>
+                                    <td>{{ $blog->details = Str::limit($blog->details, 40) }}</td>
                                     <td>{{ optional($blog->category)->name }}</td>
                                     <td>{{ $blog->created_at->format('F j, Y, g:i a') }}</td>
                                     <td>

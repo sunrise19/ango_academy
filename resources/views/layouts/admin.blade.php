@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Dashboard</title>
+    <title>Admin</title>
 
     {{-- favicons --}}
     <link rel="shortcut icon" href="{{ asset('image/logo.png') }}" type="image/x-icon">
@@ -100,15 +100,23 @@
 
 
 
-    <header class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0 shadow custom-navbar">
+    <header class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0 shadow custom-navbar p-3">
         <a class="navbar-brand ms-4 d-flex align-items-center" href="{{ route('dashboard') }}">
             <img src="{{ asset('image/logo.png') }}" alt="" class="img-fluid" height="" width="">
         </a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
         </button>
+
+            <h1 class="text-center">
+                Welcome
+                {{ $user->name}}
+            </h1>
+            <p class="d-flex justify-content-center"><small>
+                {{ $user->email}}
+            </small></p>
+
+
     </header>
 
 
@@ -193,7 +201,7 @@
 
     <!-- footer -->
     <footer class="custom-footer-styling">
-        <div class="container-fluid row">
+        <div class="container-fluid row p-5">
 
             <div class="col-lg-4 col-md-8 my-3 custom-footer-item0">
                 <a href="{{ route('home') }}"
@@ -251,7 +259,7 @@
 
         <div class="container-fluid row py-4">
             <div class="col d-flex justify-content-center custom-footer-item4">
-                <p>Copyright © 2023. All Right Reserved.</p>
+                <p>Copyright © Ango Crystal Academy 2023. All Right Reserved.</p>
             </div>
         </div>
 

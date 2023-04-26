@@ -60,7 +60,7 @@
                               <a class="{{Request::routeIs('management') ? 'active' : ''}} nav-link" href="{{ route('management')}}">Management</a>
                             </li>
                             <li class="nav-item">
-                              <a class="{{Request::routeIs('news-blog') ? 'active' : ''}} nav-link" href="{{ route('news-blog')}}">News & Events</a>
+                              <a class="{{Request::routeIs('news-blog') || Request::routeIs('blog.show') ? 'active' : ''}} nav-link" href="{{ route('news-blog')}}">News & Events</a>
                             </li>
                             <li class="nav-item">
                               <a class="{{Request::routeIs('gallery') ? 'active' : ''}} nav-link" href="{{ route('gallery')}}">Gallery</a>
@@ -136,7 +136,7 @@
 
       <!-- footer -->
       <footer class="custom-footer-styling">
-            <div class="container-fluid row">
+            <div class="container-fluid row p-5">
 
                 <div class="col-lg-4 col-md-8 my-3 custom-footer-item0">
                   <a href="{{ route('home')}}" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
@@ -179,9 +179,9 @@
 
             </div>
 
-            <div class="container-fluid row py-4">
+            <div class="container-fluid row py-4 ps-5">
                 <div class="col d-flex justify-content-center custom-footer-item4">
-                    <p>Copyright © 2023. All Right Reserved.</p>
+                    <p>Copyright © Ango Crystal Academy 2023. All Right Reserved.</p>
                 </div>
             </div>
 

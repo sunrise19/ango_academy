@@ -53,6 +53,7 @@ class FrontController extends Controller
             $query->where('name', 'Blog');
         })
         ->orderBy('created_at', 'desc')
+        ->orderBy('updated_at', 'desc')
         ->take(9)
         ->get();
 
@@ -60,12 +61,14 @@ class FrontController extends Controller
             $queryNews->where('name', 'News');
         })
         ->orderBy('created_at', 'desc')
+        ->orderBy('updated_at', 'desc')
         ->take(3)
         ->get();
 
-        return view('pages.newsblog')->with(['blogs' => $blogs, 'news' => $news]);
-    }
+        $comments = Comment::all();
 
+        return view('pages.newsblog')->with(['blogs' => $blogs, 'news' => $news, 'comment' => $comments]);
+    }
     public function show($id){
         $blog = Blog::findOrFail($id);
         $comments = Comment::all();

@@ -24,8 +24,8 @@ class DashboardController extends Controller
                         ->orderBy('updated_at', 'desc')
                         ->take(15)
                         ->get();
-
-        return view('dashboard')->with (['blogs' => $blogs]);
+        $user = auth()->user();
+        return view('dashboard')->with (['blogs' => $blogs, 'user' => $user]);
 
     }
 }

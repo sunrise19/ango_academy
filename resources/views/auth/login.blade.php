@@ -19,15 +19,15 @@
         </div>
         @endif
         <div class="col-md-6 offset-md-3">
-            <div class="card p-5 m-3 sm-shadow">
+            <div class="card p-5 m-3 shadow">
 
-
+                <h1 class="text-center">LOGIN</h1>
                 <form action="{{ route('login')}}" class="form-control" method="post">
                     @csrf
 
 
                     <div class="mb-3">
-                        <label for="email" class="form-label">enter email</label>
+                        <label for="email" class="form-label">Enter Email</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email')}}">
                         @error('email')
                         <small class="alert alert-danger">{{ $message }}</small>
@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="password" class="form-label">enter password</label>
+                        <label for="password" class="form-label">Enter Password</label>
                         <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" value="{{ old('password')}}">
                         @error('password')
                         <small class="alert alert-danger">{{ $message }}</small>
@@ -43,11 +43,11 @@
                     </div>
 
 
-                    <button type="submit" class="btn btn-outline-primary btn-lg w-100">login</button>
+                    <button type="submit" class="btn btn-outline-primary btn-lg w-100">Login</button>
 
                     <p>or</p>
 
-                    <a href="{{ route('register')}}" class="bg-primary text-light">Sign up</a>
+                    <a href="{{ route('register')}}" class="bg-primary text-light">Sign Up</a>
 
 
 
