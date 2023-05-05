@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ango Crystal</title>
 
-    {{-- bootstrap & css --}}
-    <link rel="stylesheet" href="{{ '/CSS/bootstrap.min.css' }}">
-    <link rel="stylesheet" href="{{ '/CSS/style.css' }}">
+    {{-- bootstrap & css & aos--}}
+    <link rel="stylesheet" href="{{ asset('/CSS/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/CSS/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('aos/aos.css')}}">
 
     {{-- google font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +29,7 @@
 
 <body>
       <header id="header">
-        <nav class="navbar navbar-expand-sm bg-body-white fixed-top">
+        <nav class="navbar navbar-expand-sm fixed-top" id="navbar" style="transition: height 0.3s ease-in-out;">
             <div class="container-fluid">
                 {{-- logo --}}
                 <a class="navbar-brand ms-4 d-flex align-items-center" href="{{ route('home')}}">
@@ -80,7 +81,33 @@
                 {{ session()->get('message') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-bs-delay="5000"></button>
             </div>
+        @elseif (session()->has('admin'))
+            <div class="container-fluid">
+                <div class="row alert alert-danger alert-dismissible fade show" role="alert">
+                    <div class="col-9">
+                        {{ session()->get('admin') }}
+                    </div>
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-primary">Logout</button>
+                                </form>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-bs-delay="5000"></button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
         @endif
+
 
 
       {{-- back to top --}}
@@ -111,9 +138,9 @@
 
 
     {{-- newsletter --}}
-      <div id="newsletter" class="d-flex align-items-center mb-1" style="background-image: url('{{ asset('image/newsletter-bg.png')}}');">
+      <div id="newsletter" class="d-flex align-items-center mb-1 p-4" style="background-image: url('{{ asset('image/newsletter-bg.png')}}');">
 
-        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10 col-xxs-10 mx-auto">
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10 col-xxs-10 mx-auto" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
           <p class="text-center newsletter-text">
           Better <span class="newsletter-orange-text">education</span> for a better world.<br> <span class="newsletter-orange-text">Investment</span> in <span class="newsletter-orange-text">knowledge</span> pays the best <span class="newsletter-orange-text">interest.</span>
           </p>
@@ -122,9 +149,9 @@
             @csrf
 
             <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Enter e-mail to receive news letter" style="height: 50px"  name="email" @error('email') is-invalid @enderror value="{{ old('email') }}">
+              <input type="email" class="form-control" id="newsletter-input" placeholder="Enter e-mail to receive news letter"  name="email" @error('email') is-invalid @enderror value="{{ old('email') }}">
 
-              <button class="btn message-button"><i class="fa-solid fa-paper-plane ps-2 pe-2" style="color: #ffffff; font-size: 30px"></i></button>
+              <button class="btn message-button"><i class="fa-solid fa-paper-plane px-1 px-lg-2 px-md-2" style="color: #ffffff; font-size: 30px"></i></button>
             </div>
           </form>
           @error('email')
@@ -134,7 +161,7 @@
 
       </div>
 
-      <!-- footer -->
+        <!-- footer -->
       <footer class="custom-footer-styling">
             <div class="container-fluid row p-5">
 
@@ -187,11 +214,11 @@
 
       </footer>
 
-    <script src="{{ '/js/bootstrap.min.js' }}"></script>
-    <script src="{{ '/js/script.js' }}"></script>
+    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/js/script.js') }}"></script>
 
     <!-- Adding scripts to use bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    {{-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous">
     </script>
@@ -201,6 +228,12 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script> --}}
+
+    {{-- aos js --}}
+    <script src="{{ asset('aos/aos.js')}}"></script>
+    <script>
+        AOS.init();
     </script>
 
 </body>

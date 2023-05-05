@@ -16,10 +16,10 @@
     <div class="row mt-5">
         @foreach($news as $key => $blog)
             @if($key === 0)
-                <div class="col-lg-8">
-                    <div id="main-news-col">
+                <div class="col-lg-8" data-aos="slide-right" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="position-relative">
                         <img class="img-fluid" width="100%" src="{{ asset('storage/'.$blog->image)}}" alt="">
-                        <div id="news1-desc">
+                        <div class="position-absolute bottom-0 bg-black bg-opacity-50 w-100 text-white p-1 p-lg-4">
                             <h2>
                                 {{ $blog->title }}
                             </h2>
@@ -28,21 +28,21 @@
                             </p>
                         </div>
                     </div>
-                    <h5 class="mt-5">RECENT EVENT</h5>
-                    <div class="row">
+                    <h5 class="mt-5 fw-bold" style="color: #6665B5;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">RECENT EVENT</h5>
+                    <div class="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                         <div class="col-lg-3">
-                            <h4><i class="fa-solid fa-user-tie mx-2"></i>Admin</h4>
+                            <h4 class="fw-bold"><i class="fa-solid fa-user-tie mx-2"></i>Admin</h4>
                         </div>
                         <div class="col-lg-5">
-                            <h4><i class="fa-solid fa-clock mx-2"></i>{{ $blog->created_at->format('F j, Y, g:i a') }}.</h4>
+                            <h4 class="fw-bold"><i class="fa-solid fa-clock mx-2"></i>{{ $blog->created_at->format('F j, Y, g:i a') }}.</h4>
                         </div>
                         <div class="col-lg-4">
                             @if($blog->comment->count() > 1)
-                                <h4><i class="fa-solid fa-comments mx-2"></i>{{$blog->comment->count()}} comments</h4>
+                                <h4 class="fw-bold"><i class="fa-solid fa-comments mx-2"></i>{{$blog->comment->count()}} comments</h4>
                             @elseif ($blog->comment->count() === 1 )
-                                <h4><i class="fa-solid fa-comments mx-2"></i>{{$blog->comment->count()}} comment</h4>
+                                <h4 class="fw-bold"><i class="fa-solid fa-comments mx-2"></i>{{$blog->comment->count()}} comment</h4>
                             @else
-                                <h4><i class="fa-solid fa-comments mx-2"></i>no comment</h4>
+                                <h4 class="fw-bold"><i class="fa-solid fa-comments mx-2"></i>no comment</h4>
                             @endif
                         </div>
                     </div>
@@ -57,24 +57,24 @@
                     <div class="row d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
                         @elseif( $key === 1)
 
-                        <div class="">
+                        <div class="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                             <img src="{{ asset('storage/'.$blog->image)}}" class="" alt="" width="100%">
-                            <h5 class="mt-4" style="color: #6665B5;">TOP STORY</h5>
+                            <h6 class="mt-4 fw-bold" style="color: #6665B5;">TOP STORY</h6>
                             <p class="card-text">
                                 {{$blog->details = Str::limit($blog->details, 70)}}
                             </p>
                             <a href="{{ route('blog.show', $blog->id)}}" id="top-story-link"><b>READMORE &gt;&gt;&gt;</b></a>
                         </div>
 
-                        @else
+            @else
 
                         <div class="mt-5">
-                            <img src="{{ asset('storage/'.$blog->image)}}" class="img-fluid" alt="" width="100%">
-                            <h5 class="mt-4" style="color: #6665B5;">TOP STORY</h5>
-                            <p class="card-text">
+                            <img src="{{ asset('storage/'.$blog->image)}}" class="img-fluid" alt="" width="100%" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                            <h6 class="mt-4 fw-bold" style="color: #6665B5;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">TOP STORY</h6>
+                            <p class="card-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                                 {{$blog->details = Str::limit($blog->details, 70)}}
                             </p>
-                            <a href="{{ route('blog.show', $blog->id)}}" id="top-story-link"><b>READMORE &gt;&gt;&gt;</b></a>
+                            <a href="{{ route('blog.show', $blog->id)}}" id="top-story-link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><b>READMORE &gt;&gt;&gt;</b></a>
                         </div>
 
 
@@ -95,7 +95,7 @@
                         <a href="{{ route('blog.show', $blog->id)}}" id="top-story-link">READMORE &gt;&gt;&gt;</a>
                     </div>
 
-                    @else
+                @elseif($key === 2)
 
                     <div class="col-md-6">
                         <img src="{{ asset('storage/'.$blog->image) }}" class="img-fluid" alt="" width="100%">
@@ -117,14 +117,14 @@
 
 {{-- blog session --}}
 <section class="container-fluid pt-4" style="background-color: #F2F2F2;" >
-    <div class="mb-5 title-div">
+    <div class="mb-5 title-div ms-lg-5 ms-xl-5 ms-md-4 ms-sm-3 ms-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
         <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45x">
-        <h2 class="text-start title">Latest Blog</h2>
+        <h2 class="text-start title fw-bold">Latest Blog</h2>
     </div>
         <div class="row">
             @foreach ($blogs as $blog)
 
-            <div class="col-lg-4 mb-3 px-4">
+            <div class="col-lg-4 mb-3 p-3 blog-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <img src="{{ asset('storage/'.$blog->image) }}" class="img-fluid w-100" alt="" height="350px">
                 <p>{{$blog->details = Str::limit($blog->details, 200)}}</p>
                 <h5 class="fw-bold">{{ $blog->created_at->format('F j, Y, g:i a') }} by Admin</h5>

@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        @if(session()->has('message'))
+        {{-- @if(session()->has('message'))
         <div class="alert alert-success">
             {{ session()->get('message')}}
         </div>
@@ -17,12 +17,12 @@
                 @endforeach
             </ul>
         </div>
-        @endif
-        <div class="col-md-6 offset-md-3">
-            <div class="card p-5 m-3 shadow">
+        @endif --}}
+        <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+            <div class="p-3 mt-5 shadow">
 
                 <h1 class="text-center">REGISTER</h1>
-                <form action="{{ route('register')}}" class="form-control" method="post">
+                <form action="{{ route('register')}}" method="post">
                     @csrf
 
                     <div class="mb-3">
@@ -43,29 +43,31 @@
 
                     <div class="mb-3">
                         <label for="password" class="form-label">Enter Password</label>
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" value="{{ old('password')}}">
+                        <div class="password-field">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" value="{{ old('password')}}">
+                            <span>
+                                <i id="show_password" class="bi bi-eye-fill fs-5"></i>
+                            </span>
+                        </div>
                         @error('password')
                         <small class="alert alert-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
                     <div class="mb-3">
-                        <label for="password" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" id="password" value="{{ old('password')}}">
+                        <label for="confirm_password" class="form-label">Confirm Password</label>
+                        <div class="confirm-password-field">
+                            <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" id="confirm_password" value="{{ old('password')}}">
+                            <span>
+                                <i id="toggler_password" class="bi bi-eye-fill fs-5"></i>
+                            </span>
+                        </div>
                         @error('password_confirmation')
                         <small class="alert alert-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
-
-
-
-
-
                     <button type="submit" class="btn btn-outline-primary btn-lg w-100">Register</button>
-
-
-
 
                 </form>
          </div>

@@ -32,16 +32,19 @@ Route::get('/management', [FrontController::class, 'management'])->name('managem
 Route::get('/gallery', [FrontController::class, 'gallery'])->name('gallery');
 Route::get('/news-blog', [FrontController::class, 'newsBlog'])->name('news-blog');
 Route::get('/blog/{id}', [FrontController::class, 'show'])->name('blog.show');
-Route::get('/gallery/full-image', [FrontController::class, 'fullPage'])->name('gallery.full');
 
-Route::middleware(['auth'])->group(function(){
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/create-blog', [BlogController::class, 'create'])->name('blog.create');
-Route::post('/create-blog', [BlogController::class, 'store'])->name('blog.store');
-Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
-Route::post('/edit/{id}', [BlogController::class, 'update'])->name('blog.update');
-Route::get('/delete/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
-Route::resource('/categories', CategoryController::class);
+// admin
+Route::prefix("admin")->middleware(['auth','isAdmin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/create-blog', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('/create-blog', [BlogController::class, 'store'])->name('blog.store');
+    Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::post('/edit/{id}', [BlogController::class, 'update'])->name('blog.update');
+    Route::get('/delete/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+    Route::resource('/categories', CategoryController::class);
+
+    Route::get('/comment/{id}', [CommentController::class, 'delete'])->name('comment.delete');
+    Route::delete('/gallery/{id}', [GalleryController::class, 'delete'])->name('gallery.delete');
 });
 
 Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter');
@@ -49,7 +52,9 @@ Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsle
 Route::get('/newsletter{id}', [NewsletterController::class, 'destroy'])->name('newsletter.destroy');
 
 Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
-Route::delete('/comment/{id}', [CommentController::class, 'delete'])->name('comment.delete');
+// space for delete comment... check the middleware above
+Route::post('comment/{comment}/like', [CommentController::class, 'like'])->name('comment.like');
 
 Route::get('/create-gallery', [GalleryController::class, 'create'])->name('gallery.create');
 Route::post('/create-gallery', [GalleryController::class, 'store'])->name('gallery.store');
+// space for delete gallery... check the middleware above

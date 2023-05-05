@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -26,4 +27,17 @@ class GalleryController extends Controller
         session()->flash('message', 'Image Uploaded Successfully!');
         return redirect()->back();
     }
+
+    public function delete($id){
+        $galleries = Gallery::findOrFail($id);
+        $path = public_path('gallery_images' . $galleries->image);
+
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        $galleries->delete();
+        session()->flash('message', 'Image Deleted Successfully');
+        return redirect()->back();
+    }
+
 }

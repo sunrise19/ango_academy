@@ -132,9 +132,12 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block text-bg-light sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
-                    <h5>Ango Crystal</h5>
+                    <a href="{{ route('dashboard') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> &nbsp;
+                        <img src="{{ asset('image/footer_logo.png')}}" alt="" width="30px" height="30px">&nbsp;&nbsp;
+                        <span class="fs-4">Ango Crystal</span>
+                    </a>
                     <hr>
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -154,37 +157,18 @@
                         </li>
                         <li class="nav-item">
                             <a class="{{ Request::routeIs('gallery.create') ? 'active' : ''}} nav-link" href="{{ route('gallery.create') }}">
-                                Gallery
+                                Upload Gallery
                             </a>
                         </li>
-                    </ul>
 
-                    {{-- <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text" class="align-text-bottom"></span>
-                                Current month
-                            </a>
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button class="btn btn-link" type="submit" style="text-decoration: none">Logout</button>
+                            </form>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text" class="align-text-bottom"></span>
-                                Last quarter
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text" class="align-text-bottom"></span>
-                                Social engagement
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text" class="align-text-bottom"></span>
-                                Year-end sale
-                            </a>
-                        </li>
-                    </ul> --}}
+
+                    </ul>
                 </div>
             </nav>
 

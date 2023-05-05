@@ -17,10 +17,11 @@ class FrontController extends Controller
             $query->where('name', 'Blog');
         })
         ->orderBy('created_at', 'desc')
+        ->orderBy('updated_at', 'desc')
         ->take(3)
         ->get();
 
-        $galleries = Gallery::orderBy('created_at', 'desc')->take(3)->get();
+        $galleries = Gallery::orderBy('created_at', 'desc')->orderBy('updated_at', 'desc')->take(3)->get();
         // $blogs = Blog::all()->sortByDesc(function ($item) {
         //     return $item->updated_at ?? $item->created_at;
         // })->take(3);
@@ -43,7 +44,7 @@ class FrontController extends Controller
     }
 
     public function gallery(){
-        $galleries = Gallery::orderBy('created_at', 'desc')->take(9)->get();
+        $galleries = Gallery::orderBy('created_at', 'desc')->orderBy('updated_at', 'desc')->take(9)->get();
 
         return view('pages.gallery')->with(['galleries' => $galleries]);
     }
@@ -74,11 +75,8 @@ class FrontController extends Controller
         $comments = Comment::all();
         // $comment = Comment::where('post_id', $id)->get();
         // return view('post', ['comments' => $comment]);
+        // $user = auth()->user();
         return view('posts.blog', compact('blog', 'comments'));
     }
 
-    public function fullPage(){
-        $galleries = Gallery::all();
-        return view('pages.full_image', ['galleries' => $galleries]);
-    }
 }
