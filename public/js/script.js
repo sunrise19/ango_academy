@@ -38,9 +38,7 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
 
-//script for like
-
-
+//script for team carousel
 
 //script for hide and reveal password
 var password = document.getElementById('password');
@@ -77,4 +75,3 @@ var togglerPassword = document.getElementById('toggler_password');
     };
 
 togglerPassword.addEventListener('click', revealHidePassword);
-
