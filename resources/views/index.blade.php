@@ -218,75 +218,81 @@
             </div>
         </div>
 
+        {{-- teams slider --}}
         <div class="row">
             <div class="col-lg-1 d-flex justify-content-center align-items-center">
-                <button class="team-slider">
+                <div class="team-slider">
                     <img src="{{asset('image/team_Slider.png')}}" height="50px" alt="">
-                </button>
-            </div>
-            <div class="col-lg-10">
-                <div class="row">
-                    <div class="col-lg-4 custum-col-4 mx-md-auto mx-sm-auto col-sm-8">
-                        <div class="cards custom-cards shadow-lg">
-                            <div class="d-flex justify-content-center">
-                                <div class="team-image-frame d-flex justify-content-center align-items-center">
-                                    <img class="img-fluid" src="{{asset('image/team_image1.png')}}" alt="">
-                                </div>
-                            </div>
-                            <h3 class="d-flex justify-content-center team-name">Afuwape J. Abiodun</h3>
-                            <p class="d-flex justify-content-center team-position">Headmaster</p>
-                            <div class="d-flex justify-content-center">
-                                <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
-                                <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
-                                <a href=""><i class="fa-brands fa-instagram px-3 text-warning"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 custum-col-4">
-                        <div class="cards custom-cards shadow-lg">
-                            <div class="d-flex justify-content-center">
-                                <div class="team-image-frame d-flex justify-content-center align-items-center">
-                                    <img class="img-fluid" src="{{asset('image/team_image2.png')}}" alt="">
-                                </div>
-                            </div>
-                            <h3 class="d-flex justify-content-center team-name">Afuwape J. Abiodun</h3>
-                            <p class="d-flex justify-content-center team-position">Headmaster</p>
-                            <div class="d-flex justify-content-center">
-                                <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
-                                <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
-                                <a href=""><i class="fa-brands fa-instagram px-3 text-warning"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 custum-col-4">
-                        <div class="cards custom-cards shadow-lg">
-                            <div class="d-flex justify-content-center">
-                                <div class="team-image-frame d-flex justify-content-center align-items-center">
-                                    <img class="img-fluid" src="{{asset('image/team_image3.png')}}" alt="">
-                                </div>
-                            </div>
-                            <h3 class="d-flex justify-content-center team-name">Afuwape J. Abiodun</h3>
-                            <p class="d-flex justify-content-center team-position">Headmaster</p>
-                            <div class="d-flex justify-content-center">
-                                <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
-                                <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
-                                <a href=""><i class="fa-brands fa-instagram px-3 text-warning"></i></a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+            <div class="col-lg-10">
+                <div class="testimonials-slider swiper">
+                    <div class="swiper-wrapper my-5">
+
+                            <div class="swiper-slide">
+                                <div class="cards custom-cards shadow-lg">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="team-image-frame d-flex justify-content-center align-items-center">
+                                            <img class="img-fluid" src="{{asset('image/team_image1.png')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <h3 class="d-flex justify-content-center team-name">Afuwape J. Abiodun</h3>
+                                    <p class="d-flex justify-content-center team-position">Headmaster</p>
+                                    <div class="d-flex justify-content-center">
+                                        <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
+                                        <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
+                                        <a href=""><i class="fa-brands fa-instagram px-3 text-warning"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="cards custom-cards shadow-lg">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="team-image-frame d-flex justify-content-center align-items-center">
+                                            <img class="img-fluid" src="{{asset('image/team_image2.png')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <h3 class="d-flex justify-content-center team-name">Afuwape J. Abiodun</h3>
+                                    <p class="d-flex justify-content-center team-position">Headmaster</p>
+                                    <div class="d-flex justify-content-center">
+                                        <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
+                                        <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
+                                        <a href=""><i class="fa-brands fa-instagram px-3 text-warning"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="cards custom-cards shadow-lg">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="team-image-frame d-flex justify-content-center align-items-center">
+                                            <img class="img-fluid" src="{{asset('image/team_image3.png')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <h3 class="d-flex justify-content-center team-name">Afuwape J. Abiodun</h3>
+                                    <p class="d-flex justify-content-center team-position">Headmaster</p>
+                                    <div class="d-flex justify-content-center">
+                                        <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
+                                        <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
+                                        <a href=""><i class="fa-brands fa-instagram px-3 text-warning"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+            </div>
             <div class="col-lg-1 d-flex justify-content-center align-items-center">
-                <button class="team-slider">
+                <div class="team-slider">
                     <img src="{{asset('image/team_Slider2.png')}}" height="50px" alt="">
-                </button>
+                </div>
             </div>
         </div>
     </section>
 
-    {{-- copied card carousel --}}
-    
-        
+
 
 {{-- gallery --}}
     <section class="container-fluid custom-gallery-section">

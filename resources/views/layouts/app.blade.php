@@ -24,6 +24,12 @@
 
     {{-- favicon --}}
     <link rel="shortcut icon" href="{{ asset('image/logo.png')}}" type="image/x-icon">
+
+    <!-- Vendor CSS Files -->
+    {{-- <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> --}}
+    <link href="{{ asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -232,6 +238,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+    {{-- end of my javascript --}}
+    <script src="{{ '/js/script.js' }}"></script>
+
+
+    <script src="{{ 'vendor/glightbox/js/glightbox.min.js' }}" ></script>
+
+    <script src="{{ 'vendor/swiper/swiper-bundle.min.js' }}"></script>
+    <script src="{{ 'vendor/typed.js/typed.min.js' }}"></script>
+    <script src="{{ 'vendor/waypoints/noframework.waypoints.js' }}"></script>
+      <!-- Template Main JS File -->
+    <script src="{{ '/js/main.js' }}"></script>
 
 </body>
 
