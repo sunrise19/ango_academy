@@ -23,13 +23,13 @@
                             <h2>
                                 {{ $blog->title }}
                             </h2>
-                            <p>
-                                {{$blog->details = Str::limit($blog->details, 70)}}
-                            </p>
+                            {{-- <p>
+                                {{$blog->details = Str::limit($blog->details, 150)}}
+                            </p> --}}
                         </div>
                     </div>
                     <h5 class="mt-5 fw-bold" style="color: #6665B5;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">RECENT EVENT</h5>
-                    <div class="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                    <div class="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                         <div class="col-lg-3">
                             <h4 class="fw-bold"><i class="fa-solid fa-user-tie mx-2"></i>Admin</h4>
                         </div>
@@ -46,10 +46,10 @@
                             @endif
                         </div>
                     </div>
-                    <p>
-                        {{$blog->details = Str::limit($blog->details, 150)}}
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        {{$blog->details = Str::limit($blog->details, 200)}}<br>
                     </p>
-                    <a href="{{ route('blog.show', $blog->id)}}" class="btn btn-lg text-light" style="background-color: #6665B5">
+                    <a href="{{ route('blog.show', $blog->id)}}" class="btn btn-lg text-light" style="background-color: #6665B5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                         more articles <i class="fa-sharp fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
@@ -84,7 +84,7 @@
             @endif
 
 
-            <div class="row d-md-block d-sm-block d-block d-xl-none d-lg-none mt-3">
+            <div class="row d-md-block d-sm-block d-block d-xl-none d-lg-none mt-5">
                 @if ($key === 0)
                     <div class="col-md-6">
                         <img src="{{ asset('storage/'.$blog->image)}}" class="img-fluid" alt="" width="100%">
@@ -116,7 +116,7 @@
 </section>
 
 {{-- blog session --}}
-<section class="container-fluid pt-4" style="background-color: #F2F2F2;" >
+<section class="container-fluid pt-4" style="background-color: #F2F2F2;">
     <div class="mb-5 title-div ms-lg-5 ms-xl-5 ms-md-4 ms-sm-3 ms-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
         <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45x">
         <h2 class="text-start title fw-bold">Latest Blog</h2>

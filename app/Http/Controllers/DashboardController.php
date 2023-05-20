@@ -22,8 +22,7 @@ class DashboardController extends Controller
         $blogs = Blog::with('category')
                         ->orderBy('created_at', 'desc')
                         ->orderBy('updated_at', 'desc')
-                        ->take(15)
-                        ->get();
+                        ->Paginate(10);
         $user = auth()->user();
         return view('dashboard')->with (['blogs' => $blogs, 'user' => $user]);
 

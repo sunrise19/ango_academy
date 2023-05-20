@@ -50,13 +50,14 @@ class FrontController extends Controller
     }
 
     public function newsBlog(){
+        Paginator::useBootstrap();
+
         $blogs = Blog::whereHas('category', function ($query) {
             $query->where('name', 'Blog');
         })
         ->orderBy('created_at', 'desc')
         ->orderBy('updated_at', 'desc')
-        ->take(9)
-        ->get();
+        ->Paginate(9);
 
         $news = Blog::whereHas('category', function ($queryNews){
             $queryNews->where('name', 'News');

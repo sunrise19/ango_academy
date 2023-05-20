@@ -202,8 +202,8 @@
 
 #back-to-top{
   position: fixed;
-  bottom: 55px;
-  right: 40px;
+  bottom: 20px;
+  right: 20px;
   width: 50px;
   height: 50px;
   display: none;
@@ -496,6 +496,11 @@
     line-height: 32px;
     font-weight: 400;
 }
+.custom-footer-item3>ul>li>a:hover i{
+    transition-duration: 1s;
+    transform: rotateY(360deg);
+    font-size: 25px;
+}
 
 .custom-footer-item4>p{
     font-size: 16px;
@@ -597,7 +602,7 @@
     color: #6665B5;
 }
 .blog-card:hover .blog-img img{
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 .blog-card:hover .card-title{
     color: #6665B5;
@@ -692,4 +697,52 @@
 }
 
 
- /* style for new carousel */
+ /* style for hide and show password */
+
+ .password-field{
+    position: relative;
+ }
+ #show_password{
+    position: absolute;
+    top: 3px;
+    right: 10px;
+ }
+
+ .confirm-password-field{
+    position: relative;
+ }
+ #toggler_password{
+    position: absolute;
+    top: 3px;
+    right: 10px;
+ }
+
+ /* paginator styling */
+ .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.page-item {
+    /* margin-right: 0.5rem; */
+}
+
+.page-item a {
+    /* padding: 0.5rem 1rem; */
+    background-color: #6665B5;
+    /* border-radius: 0.25rem; */
+    color: #fff;
+    text-decoration: none;
+}
+
+.page-item.active a {
+    background-color: #fff;
+    color: #6665B5;
+}
+
+.page-item.disabled a {
+    background-color: #ddd;
+    color: #8281e7;
+    cursor: not-allowed;
+}

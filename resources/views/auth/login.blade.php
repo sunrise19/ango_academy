@@ -31,7 +31,7 @@
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email')}}">
 
                         @error('email')
-                        <small class="alert alert-danger">{{ $message }}</small>
+                        <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -45,7 +45,7 @@
                         </div>
 
                         @error('password')
-                        <small class="alert alert-danger">{{ $message }}</small>
+                        <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 

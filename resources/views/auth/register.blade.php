@@ -29,7 +29,7 @@
                         <label for="name" class="form-label">Enter Name</label>
                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="" value="{{ old('name')}}">
                         @error('name')
-                        <small class="alert alert-danger">{{ $message }}</small>
+                        <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -37,7 +37,7 @@
                         <label for="email" class="form-label">Enter Email</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email')}}">
                         @error('email')
-                        <small class="alert alert-danger">{{ $message }}</small>
+                        <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -50,7 +50,7 @@
                             </span>
                         </div>
                         @error('password')
-                        <small class="alert alert-danger">{{ $message }}</small>
+                        <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 
@@ -63,7 +63,7 @@
                             </span>
                         </div>
                         @error('password_confirmation')
-                        <small class="alert alert-danger">{{ $message }}</small>
+                        <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
 

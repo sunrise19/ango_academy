@@ -7,7 +7,7 @@
         <div class="sub-header-overlay d-flex align-items-center">
             <div class=" ms-4">
 
-                <p class="sub-header-heading">{{ $blog->category->name }}</p>
+                <p class="sub-header-heading">News & Events</p>
 
                 <p class="sub-header-text"><a href="{{ route('home') }}" class="sub-header-link">Home</a> &rarr;
                     {{ $blog->category->name }}</p>
@@ -132,7 +132,7 @@
                     {{-- email --}}
                     <div class="mb-3">
                         <input type="email" class="form-control" name="email" placeholder="Email"
-                            @error('email') is-invalid @enderror value="{{ old('email') }}">
+                            @error('email') is-invalid @enderror value="{{ old('email') }}" required>
 
                         @error('email')
                             <small class="text-danger">{{ $message }}</small>
@@ -245,7 +245,7 @@
                                 <i class="bi bi-trash3-fill"></i>
                             </a>
                         </div>
-                        
+
                     @endauth
 
                 @endforeach

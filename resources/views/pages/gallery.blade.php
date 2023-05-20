@@ -26,7 +26,7 @@
                             <form action="{{ route('gallery.delete', $gallery->id) }}" method="POST" class=" d-flex justify-content-end">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-light position-absolute top-0" onclick="return confirm('Are you sure you want to delete this comment?')"><i class="bi bi-trash3-fill text-danger"></i></button>
+                                <button type="submit" class="btn btn-sm btn-light position-absolute top-0" onclick="return confirm('Are you sure you want to delete this image?')"><i class="bi bi-trash3-fill text-danger"></i></button>
                             </form>
                         @endauth
 
@@ -40,7 +40,7 @@
                         <form action="{{ route('gallery.delete', $gallery->id) }}" method="POST" class=" d-flex justify-content-end">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-light position-absolute top-0" onclick="return confirm('Are you sure you want to delete this comment?')"><i class="bi bi-trash3-fill text-danger"></i></button>
+                            <button type="submit" class="btn btn-sm btn-light position-absolute top-0" onclick="return confirm('Are you sure you want to delete this image?')"><i class="bi bi-trash3-fill text-danger"></i></button>
                         </form>
                     @endauth
                 </div>

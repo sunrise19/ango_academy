@@ -75,3 +75,4 @@ var togglerPassword = document.getElementById('toggler_password');
     };
 
 togglerPassword.addEventListener('click', revealHidePassword);
+

@@ -15,11 +15,11 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('image/carousel1.png') }}" height="600px" width="100%" alt="">
+                <img src="{{ asset('image/carousel1.png') }}" height="600px" width="100%" alt="" class="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
-                        <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
-                        <p> <span style="color: #F58634">Experience</span> For you Child...</p>
+                        <p class="display-5">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
+                        <p class="display-5"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
                 </div>
             </div>
@@ -27,8 +27,8 @@
                 <img src="{{ asset('image/carousel2.png') }}" height="600px" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
-                        <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
-                        <p> <span style="color: #F58634">Experience</span> For you Child...</p>
+                        <p class="display-5">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
+                        <p class="display-5"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
                 </div>
             </div>
@@ -36,8 +36,8 @@
                 <img src="{{ asset('image/carousel3.png') }}" height="600" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
-                        <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
-                        <p> <span style="color: #F58634">Experience</span> For you Child...</p>
+                        <p class="display-5">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
+                        <p class="display-5"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
                 </div>
             </div>
@@ -45,8 +45,8 @@
                 <img src="{{ asset('image/carousel4.png') }}" height="600px" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
-                        <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
-                        <p> <span style="color: #F58634">Experience</span> For you Child...</p>
+                        <p class="display-5">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
+                        <p class="display-5"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
                 </div>
             </div>
@@ -89,8 +89,8 @@
                 <img src="{{ asset('image/carousel2.png') }}" height="450px" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
-                        <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
-                        <p> <span style="color: #F58634">Experience</span> For you Child...</p>
+                        <p class="display-6">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
+                        <p class="display-6"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
                 </div>
             </div>
@@ -98,8 +98,8 @@
                 <img src="{{ asset('image/carousel3.png') }}" height="450px" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
-                        <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
-                        <p> <span style="color: #F58634">Experience</span> For you Child...</p>
+                        <p class="display-6">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
+                        <p class="display-6"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
                 </div>
             </div>
@@ -107,8 +107,8 @@
                 <img src="{{ asset('image/carousel4.png') }}" height="450px" width="100%" alt="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
-                        <p>A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
-                        <p> <span style="color: #F58634">Experience</span> For you Child...</p>
+                        <p class="display-6">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
+                        <p class="display-6"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
                 </div>
             </div>
@@ -433,7 +433,7 @@
 
     {{-- teams --}}
     <section class="container-fluid custom-team-section">
-        <div class="row d-none d-sm-none d-md-flex d-lg-flex d-xl-flex">
+        <div class="row d-none d-sm-none d-md-flex d-lg-flex d-xl-flex" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             <div class="mx-auto col-xl-6 col-lg-6 col-md-8 col-sm-12 col-xs-12 mt-5 mb-5 text-background">
                 <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45px" class="img-fluid team-bg-pattern">
                 <h2 id="team-head" class="team-sub-heading">Meet Our Team</h2>
@@ -442,20 +442,20 @@
 
         {{-- small devices subheading--}}
         <div class="row d-block d-sm-block d-md-none d-lg-none d-xl-none">
-            <div class="mx-auto col-xl-6 col-lg-6 col-md-8 col-sm-12 col-xs-12 mt-5 mb-5 text-background" style="">
+            <div class="mx-auto col-xl-6 col-lg-6 col-md-8 col-sm-12 col-xs-12 mt-5 mb-5 text-background" style="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 <img src="{{ asset('image/Pattern.png')}}" alt="" width="45px" height="45px" class="img-fluid small-team-bg-pattern">
                 <h2 class="small-team-heading">Meet Our Team</h2>
             </div>
         </div>
 
         {{-- teams slider --}}
-        <div class="row">
-            <div class="col-lg-1 d-flex justify-content-center align-items-center">
+        <div class="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <div class="col-lg-1 col-md-2 col-sm-1 d-flex justify-content-center align-items-center d-none d-sm-flex">
                 <div class="team-slider">
                     <img src="{{asset('image/team_Slider.png')}}" height="50px" alt="">
                 </div>
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-10 col-md-8 col-sm-10">
                 <div class="testimonials-slider swiper">
                     <div class="swiper-wrapper my-5">
 
@@ -514,7 +514,7 @@
                     <div class="swiper-pagination"></div>
                   </div>
             </div>
-            <div class="col-lg-1 d-flex justify-content-center align-items-center">
+            <div class="col-lg-1 col-md-2 col-sm-1 d-flex justify-content-center align-items-center d-none d-sm-flex">
                 <div class="team-slider">
                     <img src="{{asset('image/team_Slider2.png')}}" height="50px" alt="">
                 </div>

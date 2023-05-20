@@ -17,7 +17,8 @@
 
                 <h2 class="mt-5 mb-3">All Posts</h2>
 
-                <div style="overflow:scroll; height: 300px">
+                {{-- <div style="overflow:scroll; height: 300px"> --}}
+                <div style="overflow-x:auto;">
 
                     <table class="table table-striped table-responsive{-sm|-md|-lg|-xl|-xxl}">
                         <thead>
@@ -57,13 +58,13 @@
                 <div class="mt-3 offset-md-8 col-md-4 justify-content-end">
                     <a href="{{ route('blog.create') }}" class="btn btn-success">Create News & Blog</a>
                 </div>
-                
-                
+
+
             </div>
         </div>
 
         <div class="d-flex justify-content-end">
-            {{-- {{!! $blogs->links() !!}} --}}
+            {{ $blogs->links() }}
         </div>
 
     </div>

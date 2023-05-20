@@ -28,7 +28,7 @@
 
     <!-- Vendor CSS Files -->
     {{-- <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> --}}
-    <link href="{{ asset('vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
 
 </head>
@@ -88,7 +88,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" data-bs-delay="5000"></button>
             </div>
         @elseif (session()->has('admin'))
-            <div class="container-fluid">
+            <div class="container-fluid position-fixed" style="z-index: 5">
                 <div class="row alert alert-danger alert-dismissible fade show" role="alert">
                     <div class="col-9">
                         {{ session()->get('admin') }}
@@ -98,7 +98,7 @@
                             <div class="col">
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-primary">Logout</button>
+                                    <button type="submit" class="btn btn-sm btn-warning">Logout</button>
                                 </form>
                             </div>
                             <div class="col">
@@ -172,7 +172,7 @@
             <div class="container-fluid row p-5">
 
                 <div class="col-lg-4 col-md-8 my-3 custom-footer-item0">
-                  <a href="{{ route('home')}}" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                  <a href="{{ route('home')}}" class="d-flex align-items-center mb-2 mb-lg-3 link-body-emphasis text-decoration-none">
                     <img src="{{asset('image/footer_logo.png')}}" height="50px" alt="">
                   </a>
                   <p class="text-light">
@@ -180,7 +180,7 @@
                   </p>
                 </div>
 
-                <div class="col-lg-2 col-md-4 my-5 custom-footer-item1">
+                <div class="col-lg-2 col-md-4 my-5 mb-2 mb-lg-5 custom-footer-item1">
                   <h5>Link</h5>
                   <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="{{ route('home')}}" class="nav-link p-0 text-light hover-underline-animation">Home</a></li>
@@ -192,27 +192,27 @@
                   </ul>
                 </div>
 
-                <div class="col-lg-4 col-md-8 my-5 custom-footer-item2">
+                <div class="col-lg-4 col-md-8 my-5 mb-2 mb-lg-5 custom-footer-item2">
                   <h5>Find Us</h5>
                   <p><i class="fa-solid fa-location-dot"></i> 23 Victor Anene Bossua Street, GRA, Asaba, Delta State.</p>
                   <p><i class="fa-sharp fa-solid fa-envelope"></i> Angoacad@gmail.com</p>
                   <p><i class="fa-solid fa-phone"></i> +2349021063261</p>
                 </div>
 
-                <div class="col-lg-2 col-md-4 my-5 custom-footer-item3">
+                <div class="col-lg-2 col-md-4 my-5 mb-2 mb-lg-5 custom-footer-item3">
                   <h5>Social Contact</h5>
                   <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light hover-underline-animation"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
                   </ul>
                 </div>
 
             </div>
 
-            <div class="container-fluid row py-4 ps-5">
+            <div class="container-fluid row py-4 ps-5 pb-5">
                 <div class="col d-flex justify-content-center custom-footer-item4">
                     <p>Copyright © Ango Crystal Academy 2023. All Right Reserved.</p>
                 </div>
@@ -242,16 +242,14 @@
         AOS.init();
     </script>
     {{-- end of my javascript --}}
-    <script src="{{ '/js/script.js' }}"></script>
 
+    <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}" ></script>
 
-    <script src="{{ 'vendor/glightbox/js/glightbox.min.js' }}" ></script>
-
-    <script src="{{ 'vendor/swiper/swiper-bundle.min.js' }}"></script>
-    <script src="{{ 'vendor/typed.js/typed.min.js' }}"></script>
-    <script src="{{ 'vendor/waypoints/noframework.waypoints.js' }}"></script>
+    <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/typed.js/typed.min.js') }}"></script>
+    <script src="{{ asset('vendor/waypoints/noframework.waypoints.js') }}"></script>
       <!-- Template Main JS File -->
-    <script src="{{ '/js/main.js' }}"></script>
+    <script src="{{ asset('/js/main.js') }}"></script>
 
 </body>
 
