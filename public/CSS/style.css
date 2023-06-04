@@ -261,6 +261,20 @@
   color:#F58634;
 }
 
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s steps(20, end);
+  }
 
 .sub-header-overlay{
   background-color: rgba(92, 91, 163, 0.9);
@@ -333,7 +347,7 @@
     top: -30px;
     left: 100px;
     z-index: 5;
-  }
+}
 
 .blog-bg-pattern{
     position: absolute;

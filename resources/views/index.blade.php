@@ -2,7 +2,7 @@
 
 @section('content')
 {{-- Xl screen carousels --}}
-    <div id="myCarousel" class="carousel slide d-none d-sm-none d-md-none d-lg-none d-xl-block" data-bs-ride="carousel" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="200">
+    <div id="myCarousel" class="carousel slide d-none d-sm-none d-md-none d-lg-none d-xl-block" data-bs-ride="carousel" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="2 00">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1" class="active"
                 aria-current="true"></button>
@@ -18,15 +18,15 @@
                 <img src="{{ asset('image/carousel1.png') }}" height="600px" width="100%" alt="" class="">
                 <div class="container">
                     <div class="carousel-caption fs-2">
-                        <p class="display-5">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
-                        <p class="display-5"> <span style="color: #F58634">Experience</span> For you Child...</p>
+                        <p class="display-5 typing-animation">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
+                        <p class="display-5 typing-animation"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('image/carousel2.png') }}" height="600px" width="100%" alt="">
                 <div class="container">
-                    <div class="carousel-caption fs-2">
+                    <div class="carousel-caption fs-2 animate__animated animate__fadeInRight animate__delay-1s animate__duration-3s">
                         <p class="display-5">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
                         <p class="display-5"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
@@ -35,7 +35,7 @@
             <div class="carousel-item">
                 <img src="{{ asset('image/carousel3.png') }}" height="600" width="100%" alt="">
                 <div class="container">
-                    <div class="carousel-caption fs-2">
+                    <div class="carousel-caption fs-2 animate__animated animate__bounceInDown animate__delay-1s animate__duration-3s">
                         <p class="display-5">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
                         <p class="display-5"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
@@ -44,7 +44,7 @@
             <div class="carousel-item">
                 <img src="{{ asset('image/carousel4.png') }}" height="600px" width="100%" alt="">
                 <div class="container">
-                    <div class="carousel-caption fs-2">
+                    <div class="carousel-caption fs-2 animate__animated animate__hinge animate__delay-1s animate__duration-10s">
                         <p class="display-5">A wonderful <span style="color: #F58634">FIRST</span> out of home learning</p>
                         <p class="display-5"> <span style="color: #F58634">Experience</span> For you Child...</p>
                     </div>
@@ -311,24 +311,24 @@
         </button>
     </div>
 
-{{-- sports arranged in cards --}}
+    {{-- sports arranged in cards --}}
     <section class="container-fluid custom-bg-1 mb-3">
         <h2 class="mt-5 mb-4 ms-3" style="font-weight: 700; font-size: 30px; line-height: 45px;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">SOME OF OUR <span style="color: #6665B5">ACTIVITIES</span></h2>
         <div class="row ms-2 me-2">
             <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 <img src="{{ asset('image/sport_icon.png') }}" height="50px" alt="">
                 <h2 class="fw-normal my-3">Sport</h2>
-                <p class="fs-5 my-3">Sports are games such as football and other leisure activities which need physical effort and skill.</p>
+                <p class="fs-5 my-3">Sports are games such as football, athletics and other leisure activities which need physical effort and skill.</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                <img src="{{ asset('image/music_icon.png') }}" height="50px" alt="" class="img-fluid">
+                <img src="{{ asset('image/music_icon.png') }}" height="50px" alt="" class="">
                 <h2 class="fw-normal my-3">Music</h2>
-                <p class="fs-5 my-3">Music is expressing ideas and emotions in significant forms through the elements of rhythm and melody.</p>
+                <p class="fs-5 my-3">Music is expression of ideas and emotions in significant forms through the elements of rhythm and melody.</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <img src="{{ asset('image/painting_icon.png') }}" height="50px" alt="">
-                <h2 class="fw-normal my-3">Painter</h2>
-                <p class="fs-5 my-3">painting is the expression or application of human creative skill and imagination in a visual form.</p>
+                <h2 class="fw-normal my-3">Painting</h2>
+                <p class="fs-5 my-3">Painting is the expression or application of imagination and creative skills in a visual form.</p>
             </div><!-- /.col-lg-4 -->
         </div>
     </section>
@@ -463,11 +463,11 @@
                                 <div class="cards custom-cards shadow-lg">
                                     <div class="d-flex justify-content-center">
                                         <div class="team-image-frame d-flex justify-content-center align-items-center">
-                                            <img class="img-fluid" src="{{asset('image/team_image1.png')}}" alt="">
+                                            <img class="img-fluid rounded-circle" src="{{asset('image/head_teacher_1.png')}}" alt="">
                                         </div>
                                     </div>
-                                    <h3 class="d-flex justify-content-center team-name">Afuwape J. Abiodun</h3>
-                                    <p class="d-flex justify-content-center team-position">Headmaster</p>
+                                    <h3 class="d-flex justify-content-center team-name px-3">Mrs. Emeagwai N. Juliet</h3>
+                                    <p class="d-flex justify-content-center team-position">Head Teacher</p>
                                     <div class="d-flex justify-content-center">
                                         <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
                                         <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
@@ -480,11 +480,11 @@
                                 <div class="cards custom-cards shadow-lg">
                                     <div class="d-flex justify-content-center">
                                         <div class="team-image-frame d-flex justify-content-center align-items-center">
-                                            <img class="img-fluid" src="{{asset('image/team_image2.png')}}" alt="">
+                                            <img class="img-fluid rounded-circle" src="{{asset('image/teacher_1_1.png')}}" alt="">
                                         </div>
                                     </div>
-                                    <h3 class="d-flex justify-content-center team-name">Afuwape J. Abiodun</h3>
-                                    <p class="d-flex justify-content-center team-position">Headmaster</p>
+                                    <h3 class="d-flex justify-content-center team-name px-3">Mrs. Obidike E. Stephanie</h3>
+                                    <p class="d-flex justify-content-center team-position">Class Teacher</p>
                                     <div class="d-flex justify-content-center">
                                         <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
                                         <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
@@ -497,11 +497,45 @@
                                 <div class="cards custom-cards shadow-lg">
                                     <div class="d-flex justify-content-center">
                                         <div class="team-image-frame d-flex justify-content-center align-items-center">
-                                            <img class="img-fluid" src="{{asset('image/team_image3.png')}}" alt="">
+                                            <img class="img-fluid rounded-circle" src="{{asset('image/teacher_2_1.png')}}" alt="">
                                         </div>
                                     </div>
-                                    <h3 class="d-flex justify-content-center team-name">Afuwape J. Abiodun</h3>
-                                    <p class="d-flex justify-content-center team-position">Headmaster</p>
+                                    <h3 class="d-flex justify-content-center team-name px-3">Mrs. Chiazor O. Blessing</h3>
+                                    <p class="d-flex justify-content-center team-position">Class Teacher</p>
+                                    <div class="d-flex justify-content-center">
+                                        <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
+                                        <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
+                                        <a href=""><i class="fa-brands fa-instagram px-3 text-warning"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="cards custom-cards shadow-lg">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="team-image-frame d-flex justify-content-center align-items-center">
+                                            <img class="img-fluid rounded-circle" src="{{asset('image/teacher_3_1.png')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <h3 class="d-flex justify-content-center team-name px-3">Mrs. Gift E. Nduka</h3>
+                                    <p class="d-flex justify-content-center team-position">Class Teacher</p>
+                                    <div class="d-flex justify-content-center">
+                                        <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
+                                        <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>
+                                        <a href=""><i class="fa-brands fa-instagram px-3 text-warning"></i></a>
+                                    </div>
+                                </div>
+                            </div><!-- End testimonial item -->
+
+                            <div class="swiper-slide">
+                                <div class="cards custom-cards shadow-lg">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="team-image-frame d-flex justify-content-center align-items-center">
+                                            <img class="img-fluid rounded-circle" src="{{asset('image/teacher_4_1.png')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <h3 class="d-flex justify-content-center team-name px-3">Mrs. Ndukwe P. Chioma</h3>
+                                    <p class="d-flex justify-content-center team-position">Class Teacher</p>
                                     <div class="d-flex justify-content-center">
                                         <a href=""><i class="fa-brands fa-facebook px-3 text-primary"></i></a>
                                         <a href=""><i class="fa-brands fa-whatsapp px-3 text-success"></i></a>

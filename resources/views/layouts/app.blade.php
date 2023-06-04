@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="{{ asset('/CSS/style.css') }}">
     <link rel="stylesheet" href="{{ asset('aos/aos.css')}}">
 
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
     {{-- google font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

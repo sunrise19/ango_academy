@@ -76,3 +76,13 @@ var togglerPassword = document.getElementById('toggler_password');
 
 togglerPassword.addEventListener('click', revealHidePassword);
 
+$('.carousel').on('slide.bs.carousel', function (e) {
+    var $nextCaption = $(e.relatedTarget).find('.carousel-caption');
+    $nextCaption.find('.typing-animation').each(function () {
+      var $this = $(this);
+      $this.removeClass('typing-animation'); // Reset the animation class
+      setTimeout(function () {
+        $this.addClass('typing-animation'); // Add the animation class after a short delay
+      }, 100);
+    });
+  });
